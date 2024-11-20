@@ -13,3 +13,14 @@ provider "aws" {
   access_key = var.aws_access_key
 }
 
+module "dev-infra" {
+  source = "./module/dev"
+}
+
+module "test-infra" {
+  source = "./module/test-infra"
+}
+
+module "prod-infra" {
+  source = "./module/prod-infra"
+}
