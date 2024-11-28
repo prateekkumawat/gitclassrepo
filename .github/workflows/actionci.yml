@@ -14,3 +14,6 @@ jobs:
 
     - name: build image using docker build 
       run: docker build -t myimg:latest . 
+
+    - name: start containers 
+      run: docker-compose up -d 
