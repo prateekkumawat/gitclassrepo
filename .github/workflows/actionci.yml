@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
 jobs: 
   ImageBuild: 
-    runs-on: docker
+    runs-on: Linux
 
     steps:
     - name: perform git code checkout
