@@ -1,0 +1,16 @@
+name: Finox_Project_CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs: 
+  ImageBuild: 
+    runs-on: docker
+
+    steps:
+    - name: perform git code checkout
+      uses: actions/checkout@v4
+
+    - name: build image using docker build 
+      run: docker build -t myimg:latest . 
