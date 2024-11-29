@@ -15,5 +15,8 @@ jobs:
     - name: build image using docker build 
       run: docker build -t myimg:latest . 
 
+    - name: container compose move to specific path 
+      run: cp -r $GITHUB_WORKSPACE/*  /opt
+
     - name: start containers 
       run: docker-compose up -d 
