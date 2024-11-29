@@ -16,4 +16,4 @@ jobs:
       run: docker build -t myimg:latest . 
 
     - name: start containers 
-      run: sudo docker-compose up -d --force-recreate
+      run: docker-compose up -d
