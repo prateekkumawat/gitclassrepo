@@ -1,6 +1,0 @@
-services:
-  webapp:
-    container_name: nginx 
-    image: myimg:latest
-    ports:
-      - 8900:80

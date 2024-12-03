@@ -1,9 +1,9 @@
-name: Finox_Project_CI
+name: php project CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "php-dev" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "php-dev" ]
 jobs: 
   ImageBuild: 
     runs-on: Linux
@@ -12,11 +12,8 @@ jobs:
     - name: perform git code checkout
       uses: actions/checkout@v4
 
-    - name: build image using docker build 
-      run: docker build -t myimg:latest . 
+    - name: code host to apache
+      run: sudo cp -r $GITHUB.WORKSPACE/gitclassrepo/* /var/www/html
 
-    - name: stop containers 
-      run: docker-compose down 
-      
-    - name: start containers 
-      run: docker-compose up -d 
+    - name: restart apache
+      run: sudo systemctl restart httpd  
