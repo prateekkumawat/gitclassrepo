@@ -16,7 +16,7 @@ jobs:
       run: echo $GITHUB.WORKSPACE 
 
     - name: code host to apache
-      run: sudo cp -r $GITHUB.WORKSPACE/* /var/www/html
+      run: sudo cp -r $GITHUB_WORKSPACE/* /var/www/html
 
     - name: restart apache
       run: sudo systemctl restart httpd  
