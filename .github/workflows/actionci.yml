@@ -12,11 +12,11 @@ jobs:
     - name: perform git code checkout
       uses: actions/checkout@v4
 
-    - name: print path 
-      run: echo $GITHUB.WORKSPACE 
+    - name: clean path of src
+      run: sudo mv /var/www/html/* /var/www/databack
 
     - name: code host to apache
-      run: sudo cp -r $GITHUB_WORKSPACE/src/* /var/www/html
+      run: sudo cp -r $GITHUB_WORKSPACE/src/* /var/www/html/
 
     - name: restart apache
       run: sudo systemctl restart httpd  
