@@ -8,3 +8,6 @@ This is basic class for learning for github.
 
 # git file maintain using ec2
 # run runner
+# add for nodejs project 
+
+# first setup node version as reqired 
