@@ -11,9 +11,14 @@ jobs:
     steps:
     - name: perform git code checkout
       uses: actions/checkout@v4
+      
+    - name: Installing Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 20.2.0
 
-   # - name: update package using npm 
-   #   run: npm ci 
+    - name: update package using npm 
+      run: npm ci 
 
     - name: build node code production 
       run:  npm run build 
